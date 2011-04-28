@@ -1,9 +1,21 @@
 = venny
 
-Description goes here.
+Extends the standard library Set object, adding methods for cartesian products, power sets, and complements. Each method is listed below.
+
+== Set#complement(<other enumerable>)
+This is essentially the reverse of the native Set#difference method - i.e. it returns the complement of the messaged set with respect to the passed set, as oppsed to Set#difference, which returns the complement of the passed set with respect to the messaged set.
+
+== Set#power_set() (no arguments)
+This gives you the power set of the set at hand. As you might expect, these can get pretty big
+
+== Set#cartesian_product(<other enumerable 1>[,<other enumerable 1>,etc.])
+This returns the cartesian product of the messaged set instance and the passed enumerable(s).
+
+== Set#*(<other enumerable>)
+This returns the cartesian product of the messaged set instance and the passed enumerable. Same as above, but only takes one argument (being a fauxperator)
 
 == Contributing to venny
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project

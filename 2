@@ -144,7 +144,7 @@ describe Set do
     end
 
     it 'should return the correct cartesian product if both it and its arguments are not empty' do
-      set.cartesian_product([:a,:b,:c,:d],[:x,:y]).should == Set.new([
+      set.cartesian_product(Set.new([:a,:b,:c,:d],[:x,:y])).should == Set.new([
         Set.new([1,:a,:x]),
         Set.new([1,:a,:y]),
         Set.new([1,:b,:x]),
@@ -175,46 +175,8 @@ describe Set do
         Set.new([4,:b,:y]),
         Set.new([4,:c,:x]),
         Set.new([4,:c,:y]),
-        Set.new([4,:d,:x]),
+        Set.new([4,:d,:x])
         Set.new([4,:d,:y])
-      ])
-    end
-  end
-
-  describe '#*' do
-    it 'should have a #* method' do
-      set.should respond_to(:*)
-    end
-
-    it 'should throw an error with a non-Enumerable argument' do
-      -> { set * 1 }.should raise_error
-    end
-
-    it 'should return an empty set if either itself, the argument(s), or both are empty' do
-      empty_set = Set.new
-      (empty_set * Set.new).should == Set.new
-      (empty_set * Set.new([:a,:b,:c,:d])).should == Set.new
-      (set * Set.new).should == Set.new
-    end
-
-    it 'should return the correct cartesian product if both it and its argument are not empty' do
-      (set * Set.new([:a,:b,:c,:d])).should == Set.new([
-        Set.new([1,:a]),
-        Set.new([1,:b]),
-        Set.new([1,:c]),
-        Set.new([1,:d]),
-        Set.new([2,:a]),
-        Set.new([2,:b]),
-        Set.new([2,:c]),
-        Set.new([2,:d]),
-        Set.new([3,:a]),
-        Set.new([3,:b]),
-        Set.new([3,:c]),
-        Set.new([3,:d]),
-        Set.new([4,:a]),
-        Set.new([4,:b]),
-        Set.new([4,:c]),
-        Set.new([4,:d])
       ])
     end
   end
