@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "venny"
   gem.homepage = "http://github.com/awebneck/venny"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Extends the stdlib Set object adding several common set operations}
+  gem.description = %Q{Extends the standard library Set object, adding methods for cartesian products, power sets, and complements}
   gem.email = "jeremy@jeremypholland.com"
   gem.authors = ["Jeremy Holland"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
