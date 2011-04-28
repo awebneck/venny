@@ -29,7 +29,8 @@ Gem::Specification.new do |s|
     "lib/venny/std_lib_ext.rb",
     "lib/venny/std_lib_ext/set.rb",
     "spec/spec_helper.rb",
-    "spec/venny_spec.rb"
+    "spec/venny_spec.rb",
+    "venny.gemspec"
   ]
   s.homepage = %q{http://github.com/awebneck/venny}
   s.licenses = ["MIT"]
