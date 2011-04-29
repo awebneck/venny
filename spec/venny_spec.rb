@@ -103,6 +103,10 @@ describe Set do
       -> { set.cartesian_product(1) }.should raise_error
     end
 
+    it 'should throw an error with any non-Enumerable argument' do
+      -> { set.cartesian_product([1,2,3],1,[:a,:b,:c]) }.should raise_error
+    end
+
     it 'should throw an error if no argument(s) are supplied' do
       -> { set.cartesian_product }.should raise_error
     end

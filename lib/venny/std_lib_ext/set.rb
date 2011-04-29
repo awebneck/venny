@@ -26,7 +26,7 @@ class Set
   protected
     def recursive_cartesian_product(*enums)
       return Set.new([Set.new]) if enums.empty?
-      raise ArgumentError, 'all arguments must be enumerable' unless enums.inject(true) { |acc, element| element.is_a? Enumerable }
+      raise ArgumentError, 'all arguments must be enumerable' unless enums.inject(true) { |acc, element| (acc || !element.is_a?(Enumerable)) }
       enums = enums.map { |element| element.to_a }.sort { |a, b| b.length <=> a.length }
       combos = Set.new
       enums.shift.each do |element|
