@@ -17,7 +17,7 @@ class Set
 
   def cartesian_product(*enums)
     raise ArgumentError, 'must supply at least one Enumerable argument' if enums.empty?
-    raise ArgumentError, 'all arguments must be enumerable' unless enums.inject(true) { |acc, element| (acc || !element.is_a?(Enumerable)) }
+    raise ArgumentError, 'all arguments must be enumerable' if enums.any? { |element| !element.is_a?(Enumerable) }
     enums << self
     recursive_cartesian_product(*enums)
   end
